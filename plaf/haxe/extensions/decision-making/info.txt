@@ -1,0 +1,6 @@
+name=Decision-making Methods
+description=Decision-making extension
+author=Jean-Marc "jihem" QUERE
+website=https://github.com/jihem/Stencyl-DecisionMaking
+version=1.0
+compatibility=all

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+Extend (A* sample and DecisionMaking extension) CC-BY  Jean-Marc "jihem" QUERE - whizkids.fr 2012 
+-->
+
+<palette>
+	<block tag="decisionmaking-getAStarMap" spec="map for layerID: %0 with tile code: %1" code="DecisionMaking.getAStarMap(~,~)" type="normal" color="gray" returns="text">
+		<fields>
+			<number order="0"></number>
+			<text order="1"></text>
+		</fields>
+	</block> 
+	<block tag="decisionmaking-getAStarPath" spec="path for map: %0 from row: %1 col: %2 to row: %3 col: %4 %5" code="DecisionMaking.getAStarPath(~,~,~,~,~,~)" type="normal" color="gray" returns="text">
+		<fields>
+			<text order="0"></text>
+			<number order="1"></number>
+			<number order="2"></number>
+			<number order="3"></number>
+			<number order="4"></number>
+			<dropdown order="5">
+				<choices>
+					<c text="without diagonals" code="0"></c>
+					<c text="with diagonals" code="1"></c>
+				</choices>
+			</dropdown>
+		</fields>
+	</block>
+	<block tag="decisionmaking-setAStarCost" spec="set code cost: %0 to: %1" code="DecisionMaking.setAStarCost(~,~)" type="action" color="gray" returns="void">
+		<fields>
+			<text order="0"></text>
+			<number order="1"></number>
+		</fields>
+	</block>
+</palette>
