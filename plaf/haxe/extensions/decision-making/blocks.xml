@@ -11,7 +11,7 @@ Extend (A* sample and DecisionMaking extension) CC-BY  Jean-Marc "jihem" QUERE -
 			<text order="1"></text>
 		</fields>
 	</block> 
-	<block tag="decisionmaking-getAStarPath" spec="path for map: %0 from row: %1 col: %2 to row: %3 col: %4 %5" code="DecisionMaking.getAStarPath(~,~,~,~,~,~)" type="normal" color="gray" returns="text">
+	<block tag="decisionmaking-getAStarPath" spec="path for map: %0 from col: %1 row: %2 to col: %3 row: %4 %5" code="DecisionMaking.getAStarPath(~,~,~,~,~,~)" type="normal" color="gray" returns="text">
 		<fields>
 			<text order="0"></text>
 			<number order="1"></number>

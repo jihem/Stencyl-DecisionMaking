@@ -11,7 +11,7 @@ class DecisionMaking
 		return AStar.getMap(layerID,tileCD).join("|");
 	}
 
-	public static function getAStarPath(map:String,fy:Int,fx:Int,ty:Int,tx:Int,dg:Int):String
+	public static function getAStarPath(map:String,fx:Int,fy:Int,tx:Int,ty:Int,dg:Int):String
 	{
 		return new AStar(map).from(fx,fy).to(tx,ty,dg).path();
 	}
