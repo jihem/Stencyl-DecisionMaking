@@ -7,7 +7,7 @@ Stencyl extension about decision making algorithms (A*,...)
 
 ![tileset](/jihem/Stencyl-DecisionMaking/blob/master/doc/tileset.png?raw=true)
 
-You need to build a tileset. It can be the main tileset (to design the scene) of a dedicated tileset (on another layer, not visible). Each tile can be a path (.) or a wall (X). In this sample, I choose to use A1 and C1 as path tiles and B1, D1, E1 as wall tiles. E1 isn't used : I put the actor in the same bitmap. The code for this tileset is : .X.XX (see map for... block). 
+You need to build a tileset. It can be the main tileset (to design the scene) of a dedicated tileset (on another layer, not visible). Each tile can be a path (.) or a wall (X). In this sample, I choose to use A1 and C1 as path tiles and B1, D1, E1 as wall tiles. E1 isn't used : I put the actor in the same bitmap. The code for this tileset is : .X.XX (see map for... block).
 
 ![mapfor](/jihem/Stencyl-DecisionMaking/blob/master/doc/mapfor.png?raw=true)
 
@@ -27,12 +27,10 @@ In the scene, some B1 tiles can be added and used as a difficult path with a cos
 
 ![setcost](/jihem/Stencyl-DecisionMaking/blob/master/doc/setcost.png?raw=true)
 
-The "path for..." block find the best way (at the lowest cost). It will tries to avoid the A tiles. 
+The "path for..." block find the best way (at the lowest cost). It will tries to avoid the A tiles.
 
 Need more ? Go to [whizkids.fr](http://whizkids.fr)
 
 Note:
-
-Someone told me I have to invert row and column in the "path for..." block because it's more usual to have x then y. I agree : the path response is a x,y terms array. I will make this change soon (in the block description) : the visual aspect of "path for.." will change (label col before row). Take care to put your values in the right place (read the labels).
 
 The dm-astar-1.stencyl is a "game" ready to import in Stencyl (3). So you can play with this extension (without having to spend time building a test project).
