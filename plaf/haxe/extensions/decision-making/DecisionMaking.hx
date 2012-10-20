@@ -175,10 +175,11 @@ class AStar
 	public function path():String
 	{
 		var pth="";
-		for (i in this.pth)
-		{
-			pth+="|"+i.x+","+i.y;
-		}
+		if (this.pth!=null)
+			for (i in this.pth)
+			{
+				pth+="|"+i.x+","+i.y;
+			}
 		return pth.substr(1);
 	}
 }
