@@ -29,6 +29,11 @@ In the scene, some B1 tiles can be added and used as a difficult path with a cos
 
 The "path for..." block find the best way (at the lowest cost). It will tries to avoid the A tiles.
 
+You can get the cost of the path with the block "cost for map...". For the map parameter, you can use a stored "map for..." representation. The path argument needs a "path for..." result. If you set the cost of the dot (.) to 1, you will get the count of used tiles in this sample.
+
+![costformap](/jihem/Stencyl-DecisionMaking/blob/master/doc/costformap.png?raw=true)
+
+
 Need more ? Go to [whizkids.fr](http://whizkids.fr)
 
 Note:

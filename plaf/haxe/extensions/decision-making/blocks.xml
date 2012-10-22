@@ -26,10 +26,16 @@ Extend (A* sample and DecisionMaking extension) CC-BY  Jean-Marc "jihem" QUERE -
 			</dropdown>
 		</fields>
 	</block>
-	<block tag="decisionmaking-setAStarCost" spec="set code cost: %0 to: %1" code="DecisionMaking.setAStarCost(~,~)" type="action" color="gray" returns="void">
+	<block tag="decisionmaking-setAStarCost" spec="set code cost: %0 to: %1" code="DecisionMaking.setAStarCost(~,~);" type="action" color="gray" returns="void">
 		<fields>
 			<text order="0"></text>
 			<number order="1"></number>
+		</fields>
+	</block>
+	<block tag="decisionmaking-getAStarCost" spec="cost for map: %0 using path: %1" code="DecisionMaking.getAStarCost(~,~)" type="normal" color="gray" returns="number">
+		<fields>
+			<text order="0"></text>
+			<text order="1"></text>
 		</fields>
 	</block>
 </palette>

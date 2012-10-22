@@ -20,6 +20,11 @@ class DecisionMaking
 	{
 		AStar.setCost(s,c);
 	}
+
+	public static function getAStarCost(map:String,pth:String):Float
+	{
+		return new AStar(map).getPathCost(pth);
+	}
 }
 
 class ANode
@@ -181,5 +186,18 @@ class AStar
 				pth+="|"+i.x+","+i.y;
 			}
 		return pth.substr(1);
+	}
+
+	public function getPathCost(spth:String):Float
+	{
+		var cst:Float=0;
+		var pth:Array<String>;
+		pth=spth.split("|");
+		for (i in pth)
+		{
+			var xy=i.split(",");
+			cst+=AStar.cst.get(get(Std.parseInt(xy[0]),Std.parseInt(xy[1])));
+		}
+		return cst;
 	}
 }
