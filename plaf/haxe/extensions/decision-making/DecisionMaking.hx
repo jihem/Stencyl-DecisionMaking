@@ -86,6 +86,10 @@ class AStar
 
 	public static function setCost(s:String,c:Float)
 	{
+		if (AStar.cst==null) 
+		{
+			AStar.cst=new Hash<Float>();
+		}
 		AStar.cst.set(s,c);
 	}
 
