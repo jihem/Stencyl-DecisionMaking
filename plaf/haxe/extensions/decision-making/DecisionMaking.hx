@@ -1,5 +1,5 @@
 /*
-Extend (A* sample and DecisionMaking extension) CC-BY  Jean-Marc "jihem" QUERE - whizkids.fr 2012 
+Extend (A* sample and DecisionMaking extension) CC-BY  Jean-Marc "jihem" QUERE - whizkids.fr 2012
 */
 
 import com.stencyl.Engine;
@@ -56,7 +56,7 @@ class AStar
 	static var cst:Hash<Float>;
 	var mxx:Int;
 	var mxy:Int;
-	var opn:List<ANode>; 
+	var opn:List<ANode>;
 	var cld:List<ANode>;
 	var pth:List<ANode>;
 
@@ -86,7 +86,7 @@ class AStar
 
 	public static function setCost(s:String,c:Float)
 	{
-		if (AStar.cst==null) 
+		if (AStar.cst==null)
 		{
 			AStar.cst=new Hash<Float>();
 		}
@@ -95,14 +95,14 @@ class AStar
 
 	public function new(smap:String)
 	{
-		if (AStar.cst==null) 
+		if (AStar.cst==null)
 		{
 			AStar.cst=new Hash<Float>();
 			AStar.setCost(".",0);
 		}
 		this.map=smap.split("|");
-		this.mxx=map[0].length;
-		this.mxy=map.length;
+		this.mxx=map[0].length-1;
+		this.mxy=map.length-1;
 		this.opn=new List<ANode>();
 		this.cld=new List<ANode>();
 	}
@@ -124,7 +124,7 @@ class AStar
 	{
 		var h:Float= Math.POSITIVE_INFINITY;
 		var o:ANode=new ANode();
-		for (i in opn) 
+		for (i in opn)
 		{
 			if (i.h<h)
 			{
