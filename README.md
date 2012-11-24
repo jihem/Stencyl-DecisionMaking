@@ -40,9 +40,12 @@ Note:
 
 The dm-astar-1.stencyl is a "game" ready to import in Stencyl (3). So you can play with this extension (without having to spend time building a test project).
 
-dm-astar-1 : basic path finding
-dm-astar-2 : eval path cost
-dm-astar-3 : hunters chase a target (no collision)
-dm-astar-4 : hunters chase a target (with physics and collision)
+- dm-astar-1 : basic path finding
+
+- dm-astar-2 : eval path cost
+
+- dm-astar-3 : hunters chase a target (no collision)
+
+- dm-astar-4 : hunters chase a target (with physics and collision)
 
 The samples 3 and 4 have been brought to you by Tom Vencel (http://ninjadoodle.com). He made a donation for this on my paypal account. It's very kind to support me.
