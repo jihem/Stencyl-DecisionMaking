@@ -64,4 +64,4 @@ The following samples introduce cooperative path finding (with and without )
 
 To help me to continue this job and add more samples, please make a donation (send money using https://www.paypal.com to quere.jmarc(at)free.fr => replace (at) with @). For 10 euros,I will reward you with dm-astar-5 and 6 samples (not available for download here). If you want to do it yourself and don't need samples, you can use the new block "set cooperative paths list" provided. The Stencyl extension is still up to date. If you are using this in a game (and earn money), please give a minimal amount of 20 euros (I won't check but without your support I can't continue). Make it the way you feel good... Even using it for free, if you think I'm that bad.
 
-[dm-astar-6 video][http://youtu.be/dwwaYbzo0Uw]
+[dm-astar-6 video](http://youtu.be/dwwaYbzo0Uw)
