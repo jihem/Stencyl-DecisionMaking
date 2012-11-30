@@ -160,9 +160,9 @@ class AStar
 			this.map=this.smp.split("|");
 			for (i in AStar.cpp)
 			{
-				if (i.length>o.p.length)
+				if (i.length>0)
 				{
-					var xy=i[o.p.length].split(",");
+					var xy=(i.length>o.p.length)?i[o.p.length].split(","):i[Math.round(i.length-1)].split(",");
 					var x=Std.parseInt(xy[0]);
 					var y=Std.parseInt(xy[1]);
 					this.map[y]=this.map[y].substring(0,x)+'X'+this.map[y].substring(x+1,this.mxx+1);
