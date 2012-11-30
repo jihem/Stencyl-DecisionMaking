@@ -6,6 +6,7 @@ import com.stencyl.Engine;
 
 class DecisionMaking
 {
+
 	public static function getAStarMap(layerID:Int,tileCD:String):String
 	{
 		return AStar.getMap(layerID,tileCD).join("|");
@@ -14,6 +15,11 @@ class DecisionMaking
 	public static function getAStarPath(map:String,fx:Int,fy:Int,tx:Int,ty:Int,dg:Int):String
 	{
 		return new AStar(map).from(fx,fy).to(tx,ty,dg).path();
+	}
+
+	public static function setAStarCoop(cpp:Array<Dynamic>)
+	{
+		AStar.setCoop(cpp);
 	}
 
 	public static function setAStarCost(s:String,c:Float)
@@ -51,9 +57,10 @@ class ANode
 
 class AStar
 {
-
+	var smp:String;
 	var map:Array<String>;
 	static var cst:Hash<Float>;
+	static var cpp:Array<Dynamic>;
 	var mxx:Int;
 	var mxy:Int;
 	var opn:List<ANode>;
@@ -93,6 +100,17 @@ class AStar
 		AStar.cst.set(s,c);
 	}
 
+	public static function setCoop(cpp:Array<Dynamic>)
+	{
+		AStar.cpp=new Array<Array<String>>();
+		if (cpp.length>0) {
+			for (i in cpp)
+			{
+				AStar.cpp.push(i.length>1?i.split("|"):new Array<String>());
+			}
+		}
+	}
+
 	public function new(smap:String)
 	{
 		if (AStar.cst==null)
@@ -100,6 +118,11 @@ class AStar
 			AStar.cst=new Hash<Float>();
 			AStar.setCost(".",0);
 		}
+		if (AStar.cpp==null)
+		{
+			AStar.cpp=new Array<Array<String>>();
+		}
+		this.smp=smap;
 		this.map=smap.split("|");
 		this.mxx=map[0].length-1;
 		this.mxy=map.length-1;
@@ -133,6 +156,19 @@ class AStar
 			}
 		}
 		opn.remove(o);
+		if (AStar.cpp.length>0) {
+			this.map=this.smp.split("|");
+			for (i in AStar.cpp)
+			{
+				if (i.length>o.p.length)
+				{
+					var xy=i[o.p.length].split(",");
+					var x=Std.parseInt(xy[0]);
+					var y=Std.parseInt(xy[1]);
+					this.map[y]=this.map[y].substring(0,x)+'X'+this.map[y].substring(x+1,this.mxx+1);
+				}
+			}
+		}
 		return o;
 	}
 
@@ -164,7 +200,7 @@ class AStar
 							{
 								var vo=new ANode(vx,vy);
 								if ((this.cld.filter(vo.equals).length==0) &&
-								    (this.opn.filter(vo.equals).length==0))
+									(this.opn.filter(vo.equals).length==0))
 								{
 									vo.h=Math.abs(vo.x-vt.x)+Math.abs(vo.y-vt.y)+AStar.cst.get(id);
 									vo.p=new List<ANode>();
@@ -196,11 +232,14 @@ class AStar
 	{
 		var cst:Float=0;
 		var pth:Array<String>;
+		this.map=this.smp.split("|");
 		pth=spth.split("|");
 		for (i in pth)
 		{
 			var xy=i.split(",");
-			cst+=AStar.cst.get(get(Std.parseInt(xy[0]),Std.parseInt(xy[1])));
+			var id=get(Std.parseInt(xy[0]),Std.parseInt(xy[1]));
+			if (AStar.cst.exists(id))
+				cst+=AStar.cst.get(id);
 		}
 		return cst;
 	}
