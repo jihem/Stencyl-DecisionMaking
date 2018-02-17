@@ -33,9 +33,6 @@ You can get the cost of the path with the block "cost for map...". For the map p
 
 ![costformap](/doc/costformap.png?raw=true)
 
-
-Need more ? Go to [whizkids.fr](http://whizkids.fr)
-
 Note:
 
 The dm-astar-1.stencyl is a "game" ready to import in Stencyl (3). So you can play with this extension (without having to spend time building a test project).
